@@ -3,10 +3,39 @@ console.log(startGame)
 get.addEventListener("click", function () {
     start = startGame();
 });
-console.log(start)
- var timerinterval = setInterval(function, 1000() => {
-     
- }, 75000 );
+
+
+function startTimer(){
+    var counter = 75;
+    setInterval(function() {
+      counter--;
+      if (counter >= 0) {
+        span = document.getElementById("timer");
+        span.innerHTML = counter;
+      }
+      if (counter === 0) {
+          alert('sorry, out of time');
+          clearInterval(counter);
+      }
+    }, 1000);
+  }
+  $("#btn2").click(function(){
+      startTimer();
+   });
+// getting a timer working
+// const startingmin = 2;
+// let time = startingmin * 60; 
+
+// const countdownEl = document.getElementById("time");
+
+// setInterval(updateCountdown, 1000);
+
+
+// function updateCountdown() {
+//     const minutes = math.floor(time / 60);
+//     let seconds = time % 60;
+//     time--;
+// }
 //  first we need questions
  var questions =  [
      {

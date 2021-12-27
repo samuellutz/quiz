@@ -1,7 +1,9 @@
  
+ var timerinterval = setInterval(() => {
+     
+ }, 75000 );
 //  first we need questions
-=
- const questions =  [
+ var questions =  [
      {
          prompt: "What vitamin did sailors need to prevent scurvy?\N(a) vitamin c\N(b) vitamin A\N(c) vitamin B1\N(d) all of the above",
          answer: "a"

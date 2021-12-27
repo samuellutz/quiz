@@ -1,5 +1,10 @@
- 
- var timerinterval = setInterval(() => {
+var startGame = document.querySelector("#btn2");
+console.log(startGame)
+get.addEventListener("click", function () {
+    start = startGame();
+});
+console.log(start)
+ var timerinterval = setInterval(function, 1000() => {
      
  }, 75000 );
 //  first we need questions

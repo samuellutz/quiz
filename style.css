@@ -1,7 +1,7 @@
 
 .btn {
     border: none;
-    background-color: rgb(11, 8, 175);
+    background-color: rgb(119, 6, 6);
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
       0px;
@@ -18,4 +18,31 @@
     background-color: rgb(2, 146, 86);
     display: flex;
     flex-direction: column;
+}
+.btn2 {
+    border: none;
+    background-color: rgb(11, 8, 175);
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+      0px;
+    color: hsl(0, 0%, 100%);
+    display: inline-block;
+    font-size: 20px;
+    line-height: 20px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+    width: ;
+
+  }
+  body {
+    background-color: rgb(2, 146, 86);
+    display: flex;
+    flex-direction: column;
+}
+.time {
+    float: right;
+    font-family: 'Courier New', Courier, monospace;
+
 }

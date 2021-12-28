@@ -5,11 +5,11 @@ get.addEventListener("click", function () {
 });
 
 $("#start-game").click( function(){
-    var counter = 75;
+    var counter = 80;
     setInterval(function() {
       counter--;
        if (counter >= 0) {
-          span = document.getElementById("timer");
+          span = document.getElementById("time");
           span.innerHTML = counter;
        }
        if (counter === 0) {

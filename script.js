@@ -4,40 +4,42 @@ get.addEventListener("click", function () {
     start = startGame();
 });
 
-
-function startTimer(){
+$("#start-game").click( function(){
     var counter = 75;
     setInterval(function() {
       counter--;
-      if (counter >= 0) {
-        span = document.getElementById("timer");
-        span.innerHTML = counter;
-      }
-      if (counter === 0) {
+       if (counter >= 0) {
+          span = document.getElementById("timer");
+          span.innerHTML = counter;
+       }
+       if (counter === 0) {
           alert('sorry, out of time');
           clearInterval(counter);
-      }
-    }, 1000);
-  }
-  $("#btn2").click(function(){
-      startTimer();
-   });
+        }
+      }, 1000);
+ });
+
+// function startTimer(){
+//     var counter = 75;
+//     setInterval(function() {
+//       counter--;
+//       if (counter >= 0) {
+//         span = document.getElementById("timer");
+//         span.innerHTML = counter;
+//       }
+//       if (counter === 0) {
+//           alert('sorry, out of time');
+//           clearInterval(counter);
+//       }
+//     }, 1000);
+//   }
+//   $("#btn2").click(function(){
+//       startTimer();
+//    });
 // getting a timer working
-// const startingmin = 2;
-// let time = startingmin * 60; 
-
-// const countdownEl = document.getElementById("time");
-
-// setInterval(updateCountdown, 1000);
-
-
-// function updateCountdown() {
-//     const minutes = math.floor(time / 60);
-//     let seconds = time % 60;
-//     time--;
-// }
 //  first we need questions
- var questions =  [
+alert = questions
+var questions =  [
      {
          prompt: "What vitamin did sailors need to prevent scurvy?\N(a) vitamin c\N(b) vitamin A\N(c) vitamin B1\N(d) all of the above",
          answer: "a"
@@ -56,15 +58,15 @@ function startTimer(){
      },
  ];
 //  we need for the prompt to pop up at random on the screen
-for (var i = 0; i < questions.length; i++){
+for (var i=0; i < questions.length; i++){
     var response = window.prompt(questions[i].prompt);
     if (response == questions[i].answer); 
     {score++;
         alert("correct");
+    }
     else {
         alert("incorrect");
         };
-    };
 };
 alert ("you got " + score + "/" + questions.length)
 // we need for the game to be able to tell when the answer is correct and if not subtract time

@@ -1,10 +1,19 @@
-var startGame = document.querySelector("#btn2");
-console.log(startGame)
-get.addEventListener("click", function () {
-    start = startGame();
-});
+var startbutton = document.getElementById("start-btn");
+var nextbutton = document.getElementById("next-btn");
+const questionContainterElement = document.getElementById("question-container")
+const timeText = document.getElementById("time")
+const button1 = document.getElementById("btn1")
 
-$("#start-game").click( function(){
+startbutton.addEventListener("click", startGame)
+document.getElementById
+function startGame(){
+    timer()
+    console.log("started")
+    startbutton.classList.add("hide")
+    questionContainterElement.classList.remove("hide")
+    timeText.classList.remove("hide")
+}
+function timer(){
     var counter = 80;
     setInterval(function() {
       counter--;
@@ -12,12 +21,13 @@ $("#start-game").click( function(){
           span = document.getElementById("time");
           span.innerHTML = counter;
        }
-       if (counter === 0) {
+       else {
           alert('sorry, out of time');
           clearInterval(counter);
         }
+        timeText.textContent = counter;
       }, 1000);
- });
+ };
 
 // function startTimer(){
 //     var counter = 75;
@@ -38,38 +48,35 @@ $("#start-game").click( function(){
 //    });
 // getting a timer working
 //  first we need questions
-alert = questions
-var questions =  [
+const questions =  [
      {
-         prompt: "What vitamin did sailors need to prevent scurvy?\N(a) vitamin c\N(b) vitamin A\N(c) vitamin B1\N(d) all of the above",
-         answer: "a"
-     },
-     {
-         prompt: "where do dolphins live?\N(a) a lake\N\(b)the river\N\(c)space\N\(d)the sea",
-         answer: "d"
-     },
-     {
-         prompt: "what is the third letter of the alphabet?\N(a) B\N\(b) C\n\(c) D\N\(d) Z",
-         answer: "b"
-     },
-     {
-         prompt: "what are your eyes for? \N(a) Hearing \N\(b)taste\N\(c)touch\N\(d) to see",
-         answer: "d"
-     },
- ];
+         question: "What vitamin did sailors need to prevent scurvy?",
+         answer1: "Vitamin C",
+         answer2: "Vitamin A",
+         answer3: "Vitamin B1",
+         answer4: "All of the above",
+         correctAnswer: "Vitamin C"
+     }
+    ]
+//      {
+//          prompt: "where do dolphins live?\N(a) a lake\N\(b)the river\N\(c)space\N\(d)the sea",
+//          answer: "d"
+//      },
+//      {
+//          prompt: "what is the third letter of the alphabet?\N(a) B\N\(b) C\n\(c) D\N\(d) Z",
+//          answer: "b"
+//      },
+//      {
+//          prompt: "what are your eyes for? \N(a) Hearing \N\(b)taste\N\(c)touch\N\(d) to see",
+//          answer: "d"
+//      },
+//  ];
 //  we need for the prompt to pop up at random on the screen
-for (var i=0; i < questions.length; i++){
-    var response = window.prompt(questions[i].prompt);
-    if (response == questions[i].answer); 
-    {score++;
-        alert("correct");
-    }
-    else {
-        alert("incorrect");
-        };
-};
+
 alert ("you got " + score + "/" + questions.length)
 // we need for the game to be able to tell when the answer is correct and if not subtract time
 // we need a way to keep score.
 // we need for it to save to local data.
  var score = 0;
+
+ button1.addEventListener("click", eval) // you have access to the text content of the button using "this" this.textContent

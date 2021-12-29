@@ -3,6 +3,9 @@ var nextbutton = document.getElementById("next-btn");
 const questionContainterElement = document.getElementById("question-container")
 const timeText = document.getElementById("time")
 const button1 = document.getElementById("btn1")
+const questionElement = document.getElementById("question")
+const answerButtons = document.getElementById("answer-buttons")
+let shuffledQuestions, currentQuestionIndex
 
 startbutton.addEventListener("click", startGame)
 document.getElementById
@@ -12,52 +15,53 @@ function startGame(){
     startbutton.classList.add("hide")
     questionContainterElement.classList.remove("hide")
     timeText.classList.remove("hide")
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    setNextQuestion()
 }
-function timer(){
+
+function setNextQuestion(questions) {
+    showQuestions(shuffledQuestions[currentQuestionIndex])
+}
+
+function showQuestions(question){
+    questionElement.innerText = questions.question
+
+}
+
+function selectAnswer(answer) {
+
+}
+    function timer(){
     var counter = 80;
     setInterval(function() {
       counter--;
        if (counter >= 0) {
           span = document.getElementById("time");
           span.innerHTML = counter;
+        //   window.location.reload();
        }
        else {
-          alert('sorry, out of time');
+           alert ("sorry out of time.")
           clearInterval(counter);
         }
+        window.location.reload() 
         timeText.textContent = counter;
       }, 1000);
  };
 
-// function startTimer(){
-//     var counter = 75;
-//     setInterval(function() {
-//       counter--;
-//       if (counter >= 0) {
-//         span = document.getElementById("timer");
-//         span.innerHTML = counter;
-//       }
-//       if (counter === 0) {
-//           alert('sorry, out of time');
-//           clearInterval(counter);
-//       }
-//     }, 1000);
-//   }
-//   $("#btn2").click(function(){
-//       startTimer();
-//    });
-// getting a timer working
 //  first we need questions
 const questions =  [
      {
          question: "What vitamin did sailors need to prevent scurvy?",
-         answer1: "Vitamin C",
-         answer2: "Vitamin A",
-         answer3: "Vitamin B1",
-         answer4: "All of the above",
-         correctAnswer: "Vitamin C"
-     }
-    ]
+        answers: [
+            {text: "Vitamin C", correct: true},
+            {text: "Vitamin A", correct: false},
+            {text: "Vitamin B1", correct: false},
+            {text: "all of the above", correct: false},
+        ]
+    }
+]
+        
 //      {
 //          prompt: "where do dolphins live?\N(a) a lake\N\(b)the river\N\(c)space\N\(d)the sea",
 //          answer: "d"
@@ -72,11 +76,3 @@ const questions =  [
 //      },
 //  ];
 //  we need for the prompt to pop up at random on the screen
-
-alert ("you got " + score + "/" + questions.length)
-// we need for the game to be able to tell when the answer is correct and if not subtract time
-// we need a way to keep score.
-// we need for it to save to local data.
- var score = 0;
-
- button1.addEventListener("click", eval) // you have access to the text content of the button using "this" this.textContent

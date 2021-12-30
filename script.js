@@ -17,7 +17,7 @@ var leaderBoard = document.getElementById("scores")
 var scores = []
 const finalScore = document.getElementById("score")
 var userName = document.getElementById("initials")
-const finishButton = document.getElementById("finish-button")
+var finishButton = document.getElementById("finish-button")
 
 function timer(){
     var counter = 80;
@@ -137,7 +137,7 @@ function submitScore() {
 }
 function resetGame() {//NEED TO RESET STATES CORRECTLY TO BEGIN THE TEST AGAIN
     submitButton.classList.remove("hide")
-    nextButton.classList.remove("hide")
+    nextbutton.classList.remove("hide")
     questionElement.classList.remove("hide")
     answerButtonsElement.classList.remove("hide")
     endScreenElement.classList.add("hide")

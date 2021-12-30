@@ -24,7 +24,7 @@ body.wrong {
 }
 .container {
   width: 900px;
-  width: 100%;
+  width: 80%;
   background-color: ivory;
   border-radius: 10px;
   padding: 15px;
@@ -70,7 +70,18 @@ body.wrong {
 }
 #time {
     float: right;
-    margin-right: 40px;
+    margin-right: 20px;
     font-family: 'Courier New', Courier, monospace;
     color: ivory;
+    position: absolute;
+    top: 0px;
+    right: 100px;
+}
+#high-score {
+  color: ivory;
+  background-color: crimson;
+  font-size: 28px;
+  position: absolute;
+  top: 45px;
+  left: 100px;
 }

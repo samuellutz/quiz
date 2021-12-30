@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="time" class="hide">Time</div>
+    <button id="high-score" class="high-score btn">High Scores!</button>
+    <h1 id="time" class="hide">Time</h1>
    <!-- building buttons to start game and for answers -->
    <div id="question-container" class="container hide">
        <div>
+        <h1 id="time" class="hide">Time</h1>
            <div id="question">question</div>
            <div id="answer-buttons" class="btn-grid">
                <button class="btn">answer a</button>
@@ -21,10 +23,27 @@
            </div>
         </div>  
     </div>
-        <div class="controls">
+    <div id = "end-screen" class = "hide">
+      <h3>You're finished!</h3>
+      <h4>Your final score is <span id = "score"></span> </h4>
+      <h4>
+          Enter your initials: <input id = "initials" type="text">
+      </h4>
+      <button id = "submit-button" class = "submit-button button"> Submit Score</button>
+  </div>
+        <div class="controls container">
             <button id="start-btn" class="start-btn btn">start</button>
             <button id="next-btn" class="next-btn btn hide">next</button>
+            <button id="enter-high-score" class="enter-high-score btn hide">Enter High Score!</button>
         </div>
+        <div id = "scoreboard" class = "hide">
+          <h3>Scoreboard</h3>
+           <ul id = "scores">
+               <li id = "li"></li>
+           </ul>
+          <button id = "reset-button" class = "reset-button button"> Reset Scoreboard</button>
+          <button id = "restart-button" class = "restart-button button"> Play Again</button>
+      </div>
 <script src="script.js"></script>
   </body>
   </html>

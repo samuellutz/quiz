@@ -9,13 +9,12 @@
   </head>
   <body>
     <div id = "high-scores" class="btn">
-      <h2><a href="#">High Scores</a></h2>
+      <h2><a href="#">High Scores</a> </h2> 
   </div>
-    <h1 id="time" class="hide">Time</h1>
+    <h1 id="time" class="hide"></h1>
    <!-- building buttons to start game and for answers -->
    <div id="question-container" class="container hide">
        <div>
-        <h1 id="time" class="hide">Time</h1>
            <div id="question">question</div>
            <div id="answer-buttons" class="btn-grid">
                <button class="btn">answer a</button>
@@ -25,7 +24,7 @@
            </div>
         </div>  
     </div>
-    <div id = "end-screen" class = "hide">
+    <div id = "end-screen" class = "container hide">
       <h3>You're finished!</h3>
       <h4>Your final score is <span id = "score"></span> </h4>
       <h4>
@@ -33,18 +32,18 @@
       </h4>
       <button id = "submit-button" class = "submit-button button"> Submit Score</button>
   </div>
-        <div class="controls container">
+        <div class="controls">
             <button id="start-btn" class="start-btn btn">start</button>
             <button id="next-btn" class="next-btn btn hide">next</button>
-            <button id="finish-button" class="finish-button btn hide">Enter High Score!</button>
+            <button id="finish-button" class="finish-button btn hide">finish</button>
         </div>
-        <div id = "scoreboard" class = "hide">
+        <div id = "scoreboard" class = "hide container">
           <h3>Scoreboard</h3>
            <ul id = "scores">
                <li id = "li"></li>
            </ul>
-          <button id = "reset-button" class = "reset-button button"> Reset Scoreboard</button>
-          <button id = "restart-button" class = "restart-button button"> Play Again</button>
+          <button id = "reset-button" class = "reset-button btn"> Reset Scoreboard</button>
+          <button id = "restart-button" class = "restart-button btn"> Play Again</button>
       </div>
 <script src="script.js"></script>
   </body>

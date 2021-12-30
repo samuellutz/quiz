@@ -78,19 +78,27 @@ body.wrong {
     right: 100px;
 }
 #high-scores {
-  color: ivory;
-  background-color: crimson;
   font-size: 28px;
+  color: white;
   position: absolute;
   top: 45px;
   left: 100px;
+  background-color: crimson;
 }
 #scores {
   list-style-type: none;
 }
 #end-screen, #scoreboard {
-  font-size: 28px;
+  font-size: 20px;
   color: rgb(0, 0, 0);
   justify-content: center;
   align-content: center;
+}
+a {
+  font-size: 16px;
+  color: white;
+  top: 45px;
+  left: 100px;
+  flex-direction: column;
+  text-decoration: none;  
 }

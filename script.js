@@ -2,7 +2,7 @@ var startbutton = document.getElementById("start-btn");
 var nextbutton = document.getElementById("next-btn");
 var enterhighScore = document.getElementById("enter-high-score")
 const questionContainterElement = document.getElementById("question-container")
-var timer = document.getElementById("time")
+var timeText = document.getElementById("time")
 const button1 = document.getElementById("btn1")
 const questionElement = document.getElementById("question")
 const answerButtonsElement = document.getElementById("answer-buttons")
@@ -18,15 +18,33 @@ const finalScore = document.getElementById("score")
 var userName = document.getElementById("initials")
 const finishButton = document.getElementById("finish-button")
 const submitButton = document.getElementById("submit-button")
-secondsLeft = 75
 timerInterval = null
+secondsLeft = 75;
+
+// function timer(){
+//         var counter = 80;
+//         setInterval(function() {
+//           counter--;
+//            if (counter >= 0) {
+//               span = document.getElementById("time");
+//               span.innerHTML = counter;
+//            }
+//            else {
+//             window.location.reload();
+//                alert ("sorry out of time.")
+//               clearInterval(counter);
+//             }
+//             timeText.textContent = counter;
+//           }, 1000);
+//      };
 
 function timer() {
     timerInterval = setInterval(function() {
         secondsLeft--;
-        timer.textContent = secondsLeft
-        if (secondsLeft == 0) {
+        timeText.textContent = secondsLeft
+        if (secondsLeft <= 0) {
             endGame()
+            window.location.reload
             clearInterval(timerInterval);
             nextbutton.classList.add("hide")
         }
@@ -50,14 +68,16 @@ restartButton.addEventListener("click", startGame)
 restartButton.addEventListener("click", timer)
 
 function startGame(){
-    console.log("started")
-    startbutton.classList.add("hide")
-    questionContainterElement.classList.remove("hide")
-    timer.classList.remove("hide")
+    console.log("started");
+    timer();
+    startbutton.classList.add("hide");
+    questionContainterElement.classList.remove("hide");
+    timeText.classList.remove("hide");
     shuffledQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
+    currentQuestionIndex = 0;
     setNextQuestion()
 }
+
 
 function showQuestion(question){
     questionElement.innerText = question.question
@@ -77,8 +97,8 @@ function showQuestion(question){
                 selectAnswer(e)
                 secondsLeft -= 20;
               })
-         })
-}
+     })
+};
 
 function resetState() {
     clearStatusClass(document.body)
@@ -142,7 +162,7 @@ function resetGame() {//NEED TO RESET STATES CORRECTLY TO BEGIN THE TEST AGAIN
     endScreenElement.classList.add("hide")
     scoreboardElement.classList.add("hide")
     startGame()
-    secondsLeft = 60
+    // secondsLeft = 75;
   }
   
   restartButton.addEventListener("click", resetGame) 
@@ -159,22 +179,7 @@ function resetGame() {//NEED TO RESET STATES CORRECTLY TO BEGIN THE TEST AGAIN
       questionElement.classList.add("hide")
     answerButtonsElement.classList.add("hide")
     }
-//     function timer(){
-//     var counter = 80;
-//     setInterval(function() {
-//       counter--;
-//        if (counter >= 0) {
-//           span = document.getElementById("time");
-//           span.innerHTML = counter;
-//        }
-//        else {
-//         window.location.reload();
-//            alert ("sorry out of time.")
-//           clearInterval(counter);
-//         }
-//         timeText.textContent = counter;
-//       }, 1000);
-//  };
+
  function setStatusClass (element, correct) {
     clearStatusClass(element)
     if (correct){
@@ -187,7 +192,7 @@ function clearStatusClass(element) {
     element.classList.remove("correct")
     element.classList.remove("wrong")
 }
-//  first we need questions
+//  we need questions
 const questions =  [
      {
          question: "What vitamin did sailors need to prevent scurvy?",

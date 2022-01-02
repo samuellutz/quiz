@@ -53,7 +53,7 @@ function timer() {
 
 startbutton.addEventListener("click", startGame)
 nextbutton.addEventListener("click", () => {
-    currentQuestionIndex++
+    //currentQuestionIndex++
     setNextQuestion()
 
 })
@@ -85,18 +85,10 @@ function showQuestion(question){
              const button = document.createElement("button");
              button.innerText = answers.text;
              button.classList.add("btn");
-             if (answers.correct) {
-                 button.dataset.correct = answers.correct;
-                 button.addEventListener("click", function(e) {
-                    selectAnswer(e)
-                 })
-             }
+             button.dataset.correct = answers.correct;
              button.addEventListener("click", selectAnswer);
              answerButtonsElement.appendChild(button);
-             button.addEventListener("click", function(e) {
-                selectAnswer(e)
-                secondsLeft -= 20;
-              })
+            
      })
 };
 
@@ -109,18 +101,28 @@ function resetState() {
     }
 }
 
-function selectAnswer(e) {
-    const selectedbutton = e.target
-    const correct = selectedbutton.dataset.correct
-    setStatusClass(document.body, correct)
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+function selectAnswer() {
+
+    if (this.dataset.correct === "true"){
+        console.log(this.dataset.correct)
+        const element = document.getElementById("body")
+        element.classList.add("correct")
+
+    //setStatusClass(document.body, correct)
+    } else {
+        const element = document.getElementById("body")
+        element.classList.add("wrong")
+        // subtract from timer
+        secondsLeft -= 20;
+    }
+
+    currentQuestionIndex += 1
+   
+    if (shuffledQuestions.length > currentQuestionIndex) {
     nextbutton.classList.remove("hide")
     }else {
-        finishButton.classList.remove("hide")
-    }
+       finishButton.classList.remove("hide")
+     }
 }
 finishButton.addEventListener("click", endGame)
 
@@ -153,16 +155,18 @@ function submitScore() {
     })
     populateScoreboard()
 }
+localStorage.setItem("scoreboard", [])
 
 function resetGame() {//NEED TO RESET STATES CORRECTLY TO BEGIN THE TEST AGAIN
-    submitButton.classList.remove("hide")
-    nextbutton.classList.remove("hide")
-    questionElement.classList.remove("hide")
-    answerButtonsElement.classList.remove("hide")
-    endScreenElement.classList.add("hide")
-    scoreboardElement.classList.add("hide")
-    startGame()
+    location.reload()
+    // submitButton.classList.remove("hide")
+    // nextbutton.classList.remove("hide")
+    // questionElement.classList.remove("hide")
+    // answerButtonsElement.classList.remove("hide")
+    // endScreenElement.classList.add("hide")
+    // scoreboardElement.classList.add("hide")
     // secondsLeft = 75;
+    // startGame() 
   }
   
   restartButton.addEventListener("click", resetGame) 

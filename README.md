@@ -10,7 +10,7 @@ I have created a multiple choice test that lets you select answers and gives you
 
 ## Deployed Link
 
-* [See Live Site](#)
+* [See Live Site](https://samuellutz.github.io/quiz/)
 
 
 ## Authors
@@ -18,8 +18,8 @@ I have created a multiple choice test that lets you select answers and gives you
 * **Samuel Lutz** 
 
 - [Link to Portfolio Site](#)
-- [Link to Github](https://github.com/)
-- [Link to LinkedIn](https://www.linkedin.com/)
+- [Link to Github](https://github.com/samuellutz)
+- [Link to LinkedIn](https://www.linkedin.com/in/samuel-lutz-77138020b/)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 

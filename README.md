@@ -12,6 +12,9 @@ I have created a multiple choice test that lets you select answers and gives you
 
 * [See Live Site](https://samuellutz.github.io/quiz/)
 
+![image](https://user-images.githubusercontent.com/91674571/147985066-c9ed72a0-fb56-49b9-ab0c-aa64433ba8a1.png)
+
+
 
 ## Authors
 

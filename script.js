@@ -70,7 +70,7 @@ restartButton.addEventListener("click", timer)
 
 function startGame(){
     console.log("started");
-    clearInterval (timerInterval)
+    clearInterval(timerInterval);
     timer();
     startbutton.classList.add("hide");
     questionContainterElement.classList.remove("hide");
@@ -156,12 +156,14 @@ function submitScore() {
      return b[0] - a[0]
     })
     populateScoreboard()
+    clearInterval(timerInterval);
 }
 localStorage.setItem("scoreboard", [])
 
 function resetGame() {//NEED TO RESET STATES CORRECTLY TO BEGIN THE TEST AGAIN
     // location.reload()
     submitButton.classList.remove("hide")
+    clearInterval(timerInterval);
     nextbutton.classList.remove("hide")
     questionElement.classList.remove("hide")
     answerButtonsElement.classList.remove("hide")

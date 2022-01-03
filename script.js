@@ -40,6 +40,7 @@ secondsLeft = 75;
 
 function timer() {
     timerInterval = setInterval(function() {
+        console.log("hello");
         secondsLeft--;
         timeText.textContent = secondsLeft
         if (secondsLeft <= 0) {
@@ -69,6 +70,7 @@ restartButton.addEventListener("click", timer)
 
 function startGame(){
     console.log("started");
+    clearInterval (timerInterval)
     timer();
     startbutton.classList.add("hide");
     questionContainterElement.classList.remove("hide");
@@ -158,15 +160,15 @@ function submitScore() {
 localStorage.setItem("scoreboard", [])
 
 function resetGame() {//NEED TO RESET STATES CORRECTLY TO BEGIN THE TEST AGAIN
-    location.reload()
-    // submitButton.classList.remove("hide")
-    // nextbutton.classList.remove("hide")
-    // questionElement.classList.remove("hide")
-    // answerButtonsElement.classList.remove("hide")
-    // endScreenElement.classList.add("hide")
-    // scoreboardElement.classList.add("hide")
-    // secondsLeft = 75;
-    // startGame() 
+    // location.reload()
+    submitButton.classList.remove("hide")
+    nextbutton.classList.remove("hide")
+    questionElement.classList.remove("hide")
+    answerButtonsElement.classList.remove("hide")
+    endScreenElement.classList.add("hide")
+    scoreboardElement.classList.add("hide")
+    secondsLeft = 75;
+    startGame() 
   }
   
   restartButton.addEventListener("click", resetGame) 

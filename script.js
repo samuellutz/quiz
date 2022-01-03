@@ -66,7 +66,7 @@ function setNextQuestion(questions) {
 }
 
 restartButton.addEventListener("click", startGame)
-restartButton.addEventListener("click", timer)
+// restartButton.addEventListener("click", timer)
 
 function startGame(){
     console.log("started");

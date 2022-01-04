@@ -21,7 +21,7 @@ I have created a multiple choice test that lets you select answers and gives you
 
 * **Samuel Lutz** 
 
-- [Link to Portfolio Site](#)
+- [Link to Portfolio Site](https://samuellutz.github.io/samuels-portfolio/)
 - [Link to Github](https://github.com/samuellutz)
 - [Link to LinkedIn](https://www.linkedin.com/in/samuel-lutz-77138020b/)
 

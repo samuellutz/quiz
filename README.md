@@ -14,6 +14,7 @@ I have created a multiple choice test that lets you select answers and gives you
 
 ![image](https://user-images.githubusercontent.com/91674571/147985066-c9ed72a0-fb56-49b9-ab0c-aa64433ba8a1.png)
 
+![quiz](https://user-images.githubusercontent.com/91674571/147998238-c263f3a0-7c74-4342-8323-95e4bb6685eb.gif)
 
 
 ## Authors
